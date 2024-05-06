@@ -1,0 +1,3363 @@
+{
+	"info": {
+		"_postman_id": "f71d0c26-72ce-4455-bf0e-816f5a9266d8",
+		"name": "Đồ án năm 4 api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21582664"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Đăng ký",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tinhyeucuatui2002@gmail.com\",\r\n    \"password\": \"hung12345@\",\r\n    \"name\": \"hung\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tinhyeucuatui2002@gmail.com\",\r\n    \"otp\": \"767520\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/verify-otp",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hung18072002ht@gmail.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/send-otp",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"send-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tinhyeucuatui2002@gmail.com\",\r\n    \"password\": \"d#P&103Y\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forget Pasword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/forget-password?email=tinhyeucuatui2002@gmail.com",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"forget-password"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "tinhyeucuatui2002@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Su dung refresh token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkyYjA4NmQzLTMxMDktNDZlNS1iNzNhLWEwOGU5Yjc4ZjRkZiIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTI2VDA3OjQwOjE0LjMwMDY4NDYwM1oiLCJleHBpcmVkX2F0IjoiMjAyNC0wNC0yN1QwNzo0MDoxNC4zMDA2ODQ2NDNaIn0.rnkDoCWYMwuBm9j2q0Qqla_Ve2t4PqD79yo9K29JEyw\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/refresh-token",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI1M2IzMzExLTA3NWEtNGNjYi1iNTM0LWZhY2VhZjFhYWM1ZSIsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTAyLTI4VDE1OjQwOjQwLjY3OTA4MzgrMDc6MDAiLCJleHBpcmVkX2F0IjoiMjAyNC0wMi0yOFQxNTo1NTo0MC42NzkwODM4KzA3OjAwIn0.t8Ab2OsleC8GEbAakrmhqRhvZNyaQrOOtN3UWbN9zD0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/info",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Đổi mật khẩu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAyMmEwNmRhLTg2NTMtNDE0Zi1hZjZkLTFjYzNlMTdhNTBiNSIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTI5VDIzOjI0OjM3LjE2NTkzOTIrMDc6MDAiLCJleHBpcmVkX2F0IjoiMjAyNC0wNC0yOVQyMzozOTozNy4xNjU5MzkyKzA3OjAwIn0.3OcTIac4shXyFqctd-X0tivpnfFyczqJ_ir1iwjVTCI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_password\":\"hung12345@\",\r\n    \"password\": \"test1345@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/change-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ds playlist của user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlhZjk5ZTZiLWM2YjYtNDMxMy1hZjAyLTRlZTBlOTMwOGNmNiIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTI2VDA3OjMyOjE1LjExMDE0NTE0WiIsImV4cGlyZWRfYXQiOiIyMDI0LTA0LTI2VDA3OjQ3OjE1LjExMDE0NTMzMVoifQ.5lbU-PfPGWh7mqGa-R4J3LfZRMhs5XzXpasQRR7lY2E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Playlist của hùng\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/playlist",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"playlist"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tạo playlist Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Playlist của hùng\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/playlist",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"playlist"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 16 Apr 2024 15:04:50 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "263"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"Playlist của hùng\",\n            \"account_id\": 1,\n            \"description\": null,\n            \"created_at\": \"2024-04-16T15:03:28.976534Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Playlist của hùng\",\n            \"account_id\": 1,\n            \"description\": null,\n            \"created_at\": \"2024-04-16T15:04:47.801668Z\"\n        }\n    ],\n    \"messgae\": \"playlist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Ds bài hát trong playlist",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg2MTJmOWE4LWE2NmEtNDViOC1iZDJiLTFkMDUwYjBmMDE2NiIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTE2VDIyOjAwOjA0LjU5NzE5OTIrMDc6MDAiLCJleHBpcmVkX2F0IjoiMjAyNC0wNC0xNlQyMjoxNTowNC41OTcxOTkyKzA3OjAwIn0.6ds1NLsWWjWSEOr6gvyMIXqvgl9QvmlMlXYibJtvZEM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Playlist của hùng\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/playlist/:playlist_id/song",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"playlist",
+								":playlist_id",
+								"song"
+							],
+							"variable": [
+								{
+									"key": "playlist_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tạo playlist Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Playlist của hùng\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/playlist",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"playlist"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 16 Apr 2024 15:04:50 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "263"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"Playlist của hùng\",\n            \"account_id\": 1,\n            \"description\": null,\n            \"created_at\": \"2024-04-16T15:03:28.976534Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Playlist của hùng\",\n            \"account_id\": 1,\n            \"description\": null,\n            \"created_at\": \"2024-04-16T15:04:47.801668Z\"\n        }\n    ],\n    \"messgae\": \"playlist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Tạo playlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg2MTJmOWE4LWE2NmEtNDViOC1iZDJiLTFkMDUwYjBmMDE2NiIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTE2VDIyOjAwOjA0LjU5NzE5OTIrMDc6MDAiLCJleHBpcmVkX2F0IjoiMjAyNC0wNC0xNlQyMjoxNTowNC41OTcxOTkyKzA3OjAwIn0.6ds1NLsWWjWSEOr6gvyMIXqvgl9QvmlMlXYibJtvZEM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Playlist của hùng\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/playlist",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"playlist"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tạo playlist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Playlist của hùng\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/playlist",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"playlist"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 16 Apr 2024 15:04:47 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "164"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Playlist của hùng\",\n        \"account_id\": 1,\n        \"description\": null,\n        \"created_at\": \"2024-04-16T15:04:47.801668Z\"\n    },\n    \"messgae\": \"Tạo playlist thành công\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Thêm bài hát vào playlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVhODk1MzgzLTgwNGQtNDIzZC05OTJkLTYyNGMxMTgyM2I3OCIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTE2VDIyOjE1OjE1Ljc0ODAzMyswNzowMCIsImV4cGlyZWRfYXQiOiIyMDI0LTA0LTE2VDIyOjMwOjE1Ljc0ODAzMyswNzowMCJ9.gLO8GUEOViw8Mz5wa0ukLc_5Ana2wYmshacxdCaQ78c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"song_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/playlist/remove-song/:playlist_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"playlist",
+								"remove-song",
+								":playlist_id"
+							],
+							"variable": [
+								{
+									"key": "playlist_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Thêm bài hát vào playlist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"song_id\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/playlist/add-song/:playlist_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"playlist",
+										"add-song",
+										":playlist_id"
+									],
+									"variable": [
+										{
+											"key": "playlist_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 16 Apr 2024 15:14:19 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": true,\n    \"messgae\": \"Bài hát đã tồn tại trong playlist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Xóa bài hát khỏi playlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVhODk1MzgzLTgwNGQtNDIzZC05OTJkLTYyNGMxMTgyM2I3OCIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTE2VDIyOjE1OjE1Ljc0ODAzMyswNzowMCIsImV4cGlyZWRfYXQiOiIyMDI0LTA0LTE2VDIyOjMwOjE1Ljc0ODAzMyswNzowMCJ9.gLO8GUEOViw8Mz5wa0ukLc_5Ana2wYmshacxdCaQ78c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"song_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/playlist/add-song/:playlist_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"playlist",
+								"add-song",
+								":playlist_id"
+							],
+							"variable": [
+								{
+									"key": "playlist_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Thêm bài hát vào playlist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"song_id\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/playlist/add-song/:playlist_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"playlist",
+										"add-song",
+										":playlist_id"
+									],
+									"variable": [
+										{
+											"key": "playlist_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 16 Apr 2024 15:14:19 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": true,\n    \"messgae\": \"Bài hát đã tồn tại trong playlist\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Thêm bài hát vào playlist Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVhODk1MzgzLTgwNGQtNDIzZC05OTJkLTYyNGMxMTgyM2I3OCIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTE2VDIyOjE1OjE1Ljc0ODAzMyswNzowMCIsImV4cGlyZWRfYXQiOiIyMDI0LTA0LTE2VDIyOjMwOjE1Ljc0ODAzMyswNzowMCJ9.gLO8GUEOViw8Mz5wa0ukLc_5Ana2wYmshacxdCaQ78c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"song_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/playlist/add-song/:playlist_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"playlist",
+								"add-song",
+								":playlist_id"
+							],
+							"variable": [
+								{
+									"key": "playlist_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Thêm bài hát vào playlist Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"song_id\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/playlist/add-song/:playlist_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"playlist",
+										"add-song",
+										":playlist_id"
+									],
+									"variable": [
+										{
+											"key": "playlist_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 16 Apr 2024 15:15:43 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": true,\n    \"messgae\": \"Thêm bài hát vào playlist thành công\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Xóa playlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg2MTJmOWE4LWE2NmEtNDViOC1iZDJiLTFkMDUwYjBmMDE2NiIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTE2VDIyOjAwOjA0LjU5NzE5OTIrMDc6MDAiLCJleHBpcmVkX2F0IjoiMjAyNC0wNC0xNlQyMjoxNTowNC41OTcxOTkyKzA3OjAwIn0.6ds1NLsWWjWSEOr6gvyMIXqvgl9QvmlMlXYibJtvZEM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Playlist của hùng\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/playlist/:playlist_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"playlist",
+								":playlist_id"
+							],
+							"variable": [
+								{
+									"key": "playlist_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Xóa playlist",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Playlist của hùng\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/playlist/:playlist_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"playlist",
+										":playlist_id"
+									],
+									"variable": [
+										{
+											"key": "playlist_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 16 Apr 2024 15:04:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": true,\n    \"messgae\": \"Xóa playlist thành công\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Ds nghệ sĩ",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlkNDJmMDE4LTY3ODUtNDM0Zi04ODg1LWUwYWU5YTgxZTJkZCIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTI2VDAwOjU0OjE5LjQxOTgyMzQ3OFoiLCJleHBpcmVkX2F0IjoiMjAyNC0wNC0yNlQwMTowOToxOS40MTk4MjM2NDhaIn0.PvYPp_KxI6u4_47nAqCqStQxigjS14V7gTdUlHwj20I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Taylor Swift\",\r\n    \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9fO22hyFur32YV76cd94kbvoCZNEJPrHrHw&usqp=CAU\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/artists?search=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"artists"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ds nghệ sĩ",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Taylor Swift\",\r\n    \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9fO22hyFur32YV76cd94kbvoCZNEJPrHrHw&usqp=CAU\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/artists?search=",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"artists"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 02 Apr 2024 14:43:44 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "484"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 8,\n                \"name\": \"Taylor Swift Update\",\n                \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9fO22hyFur32YV76cd94kbvoCZNEJPrHrHw&usqp=CAU\",\n                \"created_at\": \"2024-02-24T07:41:30.264441Z\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Sơn Tùng MTP\",\n                \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzU1rTgHAVkOADoto3IlyZcwlgeG9NjDY5Pmi3DOuda7qVVgumRqc_O1C6FlAYim8Y1Yg&usqp=CAU\",\n                \"created_at\": \"2024-03-27T14:25:08.160651Z\"\n            }\n        ],\n        \"count\": 2\n    },\n    \"messgae\": \"Get artists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Ds danh muc",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcxODk5M2FkLTI0ZTgtNDhlOC04OGY1LWNlNWFhOGQwOTg1NiIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTI1VDExOjEwOjQ5LjcyNDU2Nzk0NloiLCJleHBpcmVkX2F0IjoiMjAyNC0wNC0yNVQxMToyNTo0OS43MjQ1NjgwNjdaIn0.j3b3wavWR5JiSySVpFNd7MK1aAyad0TSo6sJBY9Ko-c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/admin/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lấy ds nhạc Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/categories",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 15:03:36 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "324"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Buồn\",\n            \"created_at\": \"2024-03-02T15:47:07.235128Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Lãng mạn\",\n            \"created_at\": \"2024-03-02T15:47:07.235128Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Chill\",\n            \"created_at\": \"2024-03-02T15:47:07.235128Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Dễ ngủ\",\n            \"created_at\": \"2024-03-02T15:47:07.235128Z\"\n        }\n    ],\n    \"messgae\": \"Danh sách danh mục\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Lấy ds nhạc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/admin/song",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"song"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lấy ds nhạc",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/song",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"song"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Apr 2024 14:17:50 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1317"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Nơi này có anh\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T15:57:03.312548Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Nắng ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null,\n            \"artist_name\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null,\n            \"artist_name\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Nơi này có anh\",\n            \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n            \"path\": \"a.com\",\n            \"lyrics\": \"nơi này có anh\",\n            \"duration\": 310,\n            \"release_date\": \"2023-08-01\",\n            \"created_at\": \"2024-04-01T15:05:00.409466Z\",\n            \"updated_at\": null,\n            \"artist_name\": null\n        }\n    ],\n    \"messgae\": \"Get songs successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Lấy ds album",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/admin/album",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"album"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lấy ds nhạc",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/song",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"song"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Apr 2024 15:05:31 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1167"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Nơi này có anh\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T15:57:03.312548Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Nắng ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Nơi này có anh\",\n            \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n            \"path\": \"a.com\",\n            \"lyrics\": \"nơi này có anh\",\n            \"duration\": 310,\n            \"release_date\": \"2023-08-01\",\n            \"created_at\": \"2024-04-01T15:05:00.409466Z\",\n            \"updated_at\": null\n        }\n    ],\n    \"messgae\": \"Get songs successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Lấy ds bài hát trong album",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/admin/album/:album_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"album",
+								":album_id"
+							],
+							"variable": [
+								{
+									"key": "album_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lấy ds nhạc",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/song",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"song"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Apr 2024 15:05:31 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1167"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Nơi này có anh\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T15:57:03.312548Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Nắng ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Nơi này có anh\",\n            \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n            \"path\": \"a.com\",\n            \"lyrics\": \"nơi này có anh\",\n            \"duration\": 310,\n            \"release_date\": \"2023-08-01\",\n            \"created_at\": \"2024-04-01T15:05:00.409466Z\",\n            \"updated_at\": null\n        }\n    ],\n    \"messgae\": \"Get songs successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Lấy ds album của nghệ sĩ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/admin/artists/album/:artist_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"artists",
+								"album",
+								":artist_id"
+							],
+							"variable": [
+								{
+									"key": "artist_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lấy ds album của nghệ  sĩ",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/artists/album/:artist_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"artists",
+										"album",
+										":artist_id"
+									],
+									"variable": [
+										{
+											"key": "artist_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 02 Apr 2024 14:24:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "276"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 2,\n                \"artist_id\": 1,\n                \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n                \"name\": \"Sơn Tùng Collection\",\n                \"release_date\": \"2023-08-01T00:00:00Z\",\n                \"created_at\": \"2024-04-02T14:23:15.300353Z\"\n            }\n        ],\n        \"count\": 1\n    },\n    \"messgae\": \"Danh sách album theo nghệ sĩ\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Tạo bài hát",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlkNDJmMDE4LTY3ODUtNDM0Zi04ODg1LWUwYWU5YTgxZTJkZCIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTI2VDAwOjU0OjE5LjQxOTgyMzQ3OFoiLCJleHBpcmVkX2F0IjoiMjAyNC0wNC0yNlQwMTowOToxOS40MTk4MjM2NDhaIn0.PvYPp_KxI6u4_47nAqCqStQxigjS14V7gTdUlHwj20I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nơi này có anh\",\r\n    \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\r\n    \"path\": \"a.com\",\r\n    \"lyrics\": \"nơi này có anh\",\r\n    \"duration\": 310,\r\n    \"release_date\": \"2023-08-01T00:00:00Z\",\r\n    \"artist_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/song",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"song"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tạo bài hát",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Nơi này có anh\",\r\n    \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\r\n    \"path\": \"a.com\",\r\n    \"lyrics\": \"nơi này có anh\",\r\n    \"duration\": 310,\r\n    \"release_date\": \"2023-08-01T00:00:00Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/song",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"song"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Apr 2024 15:05:00 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "297"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"Nơi này có anh\",\n        \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n        \"path\": \"a.com\",\n        \"lyrics\": \"nơi này có anh\",\n        \"duration\": 310,\n        \"release_date\": \"2023-08-01\",\n        \"created_at\": \"2024-04-01T15:05:00.409466Z\",\n        \"updated_at\": null\n    },\n    \"messgae\": \"Created song successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Tạo Album",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sơn Tùng Collection\",\r\n    \"artist_id\": 1,\r\n    \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\r\n    \"release_date\": \"2023-08-01T00:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/album",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"album"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tạo Album",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Sơn Tùng Collection\",\r\n    \"artist_id\": 1,\r\n    \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\r\n    \"release_date\": \"2023-08-01T00:00:00Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/album",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"album"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Apr 2024 15:17:50 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"artist_id\": 1,\n        \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n        \"name\": \"Sơn Tùng Collection\",\n        \"release_date\": \"2023-08-01T00:00:00Z\",\n        \"created_at\": \"2024-04-01T15:17:50.273308Z\"\n    },\n    \"messgae\": \"Tạo Album thành công\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Thêm bài hát vào album",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"album_id\" :1,\r\n    \"song_ids\": [1,2,3,4,5,6]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/album/add-song",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"album",
+								"add-song"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tạo Album",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Sơn Tùng Collection\",\r\n    \"artist_id\": 1,\r\n    \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\r\n    \"release_date\": \"2023-08-01T00:00:00Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/album",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"album"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Apr 2024 15:17:50 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"artist_id\": 1,\n        \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n        \"name\": \"Sơn Tùng Collection\",\n        \"release_date\": \"2023-08-01T00:00:00Z\",\n        \"created_at\": \"2024-04-01T15:17:50.273308Z\"\n    },\n    \"messgae\": \"Tạo Album thành công\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Xóa bài hát khỏi bài hát album",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": [4,5,6]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/album/remove-song",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"album",
+								"remove-song"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Xóa bài hát khỏi album",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ids\": [4,5,6]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/album/remove-song",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"album",
+										"remove-song"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Apr 2024 16:36:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": true,\n    \"messgae\": \"Xóa bài hát khỏi album thành công\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Tạo nghệ sĩ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NmNlY2M2LTJlNWQtNDI0NC1hNzA5LTMwNjBlNGUzNTA0ZCIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTI1VDE0OjEwOjE2LjIyNDE3OTMyN1oiLCJleHBpcmVkX2F0IjoiMjAyNC0wNC0yNVQxNDoyNToxNi4yMjQxNzk0OTdaIn0.2orrXunNvyqeVKwCfbWgmLmp9lYkF5OX5khN3g87qFg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sơn Tùng MTP 2\",\r\n    \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzU1rTgHAVkOADoto3IlyZcwlgeG9NjDY5Pmi3DOuda7qVVgumRqc_O1C6FlAYim8Y1Yg&usqp=CAU\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/artists",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"artists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tao danh muc",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Rock\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tao danh muc",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Rock\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/categories",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"categories"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 15:06:19 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"name\": \"Rock\",\n        \"created_at\": \"2024-03-29T15:06:19.088996Z\"\n    },\n    \"messgae\": \"Create category successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Thêm nghệ sĩ cho bài hát",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"owner\": true,\r\n    \"artist_id\": 11,\r\n    \"song_id\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/associate-song-artist",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"associate-song-artist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Xóa nghệ sĩ cho bài hát",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"artist_id\": 7,\r\n    \"song_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/remove-associate-song-artist",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"remove-associate-song-artist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cập nhật Nghe si",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Taylor Swift Update\",\r\n    \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9fO22hyFur32YV76cd94kbvoCZNEJPrHrHw&usqp=CAU\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/artists/:artist_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"artists",
+								":artist_id"
+							],
+							"variable": [
+								{
+									"key": "artist_id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Cập nhật",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Taylor Swift Update\",\r\n    \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9fO22hyFur32YV76cd94kbvoCZNEJPrHrHw&usqp=CAU\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/artists/:artist_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"artists",
+										":artist_id"
+									],
+									"variable": [
+										{
+											"key": "artist_id",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Mar 2024 14:22:29 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 9,\n        \"name\": \"Taylor Swift Update\",\n        \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9fO22hyFur32YV76cd94kbvoCZNEJPrHrHw&usqp=CAU\",\n        \"created_at\": \"2024-03-27T14:22:29.478649Z\"\n    },\n    \"messgae\": \"Tạo nghệ sĩ thành công\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Cập nhật Danh muc",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Rock Update\",\r\n    \"id\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Cập nhật",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Taylor Swift Update\",\r\n    \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9fO22hyFur32YV76cd94kbvoCZNEJPrHrHw&usqp=CAU\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/artists/:artist_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"artists",
+										":artist_id"
+									],
+									"variable": [
+										{
+											"key": "artist_id",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Mar 2024 14:22:29 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 9,\n        \"name\": \"Taylor Swift Update\",\n        \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9fO22hyFur32YV76cd94kbvoCZNEJPrHrHw&usqp=CAU\",\n        \"created_at\": \"2024-03-27T14:22:29.478649Z\"\n    },\n    \"messgae\": \"Tạo nghệ sĩ thành công\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Cập nhật Album",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"artist_id\": 1,\r\n    \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\r\n    \"name\": \"Sơn Tùng Collection update\",\r\n    \"release_date\": \"2023-08-01T00:00:00Z\",\r\n    \"created_at\": \"2024-04-01T15:17:50.273308Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/album/:album_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"album",
+								":album_id"
+							],
+							"variable": [
+								{
+									"key": "album_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Cập nhật Album",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"artist_id\": 1,\r\n    \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\r\n    \"name\": \"Sơn Tùng Collection update\",\r\n    \"release_date\": \"2023-08-01T00:00:00Z\",\r\n    \"created_at\": \"2024-04-01T15:17:50.273308Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/album/:album_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"album",
+										":album_id"
+									],
+									"variable": [
+										{
+											"key": "album_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 02 Apr 2024 14:17:15 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"artist_id\": 1,\n        \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n        \"name\": \"Sơn Tùng Collection update\",\n        \"release_date\": \"2023-08-01T00:00:00Z\",\n        \"created_at\": \"2024-04-01T15:17:50.273308Z\"\n    },\n    \"messgae\": \"Cập nhật album thành công\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Cập nhật bài hát",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nơi này có anh update\",\r\n    \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\r\n    \"path\": \"a.com\",\r\n    \"lyrics\": \"nơi này có anh\",\r\n    \"duration\": 310,\r\n    \"release_date\": \"2023-08-01T00:00:00Z\",\r\n    \"created_at\": \"2024-04-02T14:28:49.267458Z\",\r\n    \"updated_at\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/song/:song_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"song",
+								":song_id"
+							],
+							"variable": [
+								{
+									"key": "song_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Cập nhật Album",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"artist_id\": 1,\r\n    \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\r\n    \"name\": \"Sơn Tùng Collection update\",\r\n    \"release_date\": \"2023-08-01T00:00:00Z\",\r\n    \"created_at\": \"2024-04-01T15:17:50.273308Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/album/:album_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"album",
+										":album_id"
+									],
+									"variable": [
+										{
+											"key": "album_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 02 Apr 2024 14:17:15 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"artist_id\": 1,\n        \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n        \"name\": \"Sơn Tùng Collection update\",\n        \"release_date\": \"2023-08-01T00:00:00Z\",\n        \"created_at\": \"2024-04-01T15:17:50.273308Z\"\n    },\n    \"messgae\": \"Cập nhật album thành công\"\n}"
+						},
+						{
+							"name": "Cập nhật bài hát",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Nơi này có anh update\",\r\n    \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\r\n    \"path\": \"a.com\",\r\n    \"lyrics\": \"nơi này có anh\",\r\n    \"duration\": 310,\r\n    \"release_date\": \"2023-08-01T00:00:00Z\",\r\n    \"created_at\": \"2024-04-02T14:28:49.267458Z\",\r\n    \"updated_at\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/song/:song_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"song",
+										":song_id"
+									],
+									"variable": [
+										{
+											"key": "song_id",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 02 Apr 2024 14:30:48 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "314"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 7,\n        \"name\": \"Nơi này có anh update\",\n        \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n        \"path\": \"a.com\",\n        \"lyrics\": \"nơi này có anh\",\n        \"duration\": 310,\n        \"release_date\": \"2023-08-01\",\n        \"created_at\": \"2024-04-02T14:28:49.267458Z\",\n        \"updated_at\": null\n    },\n    \"messgae\": \"Cập nhật bài hát thành công\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Xóa nghệ sĩ",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/artists/:artist_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"artists",
+								":artist_id"
+							],
+							"variable": [
+								{
+									"key": "artist_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Xoa danh muc",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Taylor Swift\",\r\n    \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9fO22hyFur32YV76cd94kbvoCZNEJPrHrHw&usqp=CAU\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/categories/:category_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"categories",
+								":category_id"
+							],
+							"variable": [
+								{
+									"key": "category_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Xóa album",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/album/:album_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"album",
+								":album_id"
+							],
+							"variable": [
+								{
+									"key": "album_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Xóa album",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/album/:album_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"album",
+										":album_id"
+									],
+									"variable": [
+										{
+											"key": "album_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 02 Apr 2024 14:17:47 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": true,\n    \"messgae\": \"Xóa album thành công\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Xóa bài hát",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/song/:song_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"song",
+								":song_id"
+							],
+							"variable": [
+								{
+									"key": "song_id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Xóa album",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/album/:album_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"album",
+										":album_id"
+									],
+									"variable": [
+										{
+											"key": "album_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 02 Apr 2024 14:17:47 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": true,\n    \"messgae\": \"Xóa album thành công\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "Lấy ds nghệ sĩ",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/public/artists?search=tay&page=1&size=50",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"public",
+								"artists"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "tay"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lấy ds nghệ sĩ",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/public/artists?search=&page=1&size=50",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"public",
+										"artists"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": ""
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "50"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 May 2024 13:50:31 GMT"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"Sơn Tùng MTP\",\n                \"avatar_url\": \"https://newsmd2fr.keeng.vn/tiin/archive/imageslead/2023/05/24/thumb4_37742f9ffa474ba1f40840eb7d9c708d.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Đình Dũng\",\n                \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM79pvj-L_FnCMstbj8_SoeGWHs8P8Vf_-YE6jEHP7Z35y8jfzjl7-tP08bD2R6RdGNfw&usqp=CAU\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Phan Mạnh Quỳnh\",\n                \"avatar_url\": \"https://upload.wikimedia.org/wikipedia/commons/b/be/Phan_Mạnh_Quỳnh.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Trịnh Đình Quang\",\n                \"avatar_url\": \"https://avatar-ex-swe.nixcdn.com/singer/avatar/2019/06/04/b/9/b/0/1559630395269_600.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"Karik\",\n                \"avatar_url\": \"https://vcdn-giaitri.vnecdn.net/2021/01/06/Karik-3463-1609901084.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Orange\",\n                \"avatar_url\": \"https://images2.thanhnien.vn/528068263637045248/2023/12/27/qmg05852-1703686735132866224209.jpeg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Thái học\",\n                \"avatar_url\": \"https://vb.1cdn.vn/2023/09/13/202309130945021.gif\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"Chi Dân\",\n                \"avatar_url\": \"https://images2.thanhnien.vn/528068263637045248/2023/4/4/chi-dan-16805906568881778204975.jpeg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Tuấn Hưng\",\n                \"avatar_url\": \"https://nld.mediacdn.vn/291774122806476800/2021/7/26/tuan-hung-khuyen-ca-si-tre-khong-nen-lam-dung-cover-1-1627263641056652420635.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 11,\n                \"name\": \"Mỹ Tâm\",\n                \"avatar_url\": \"https://images2.thanhnien.vn/528068263637045248/2023/7/11/my-tam-121-16890426245471165837760.jpeg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 12,\n                \"name\": \"Đức Phúc\",\n                \"avatar_url\": \"https://trixie.com.vn/media/images/article/23704561/tieu-su-ca-si-duc-phuc-trixie-1.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 13,\n                \"name\": \"Erik\",\n                \"avatar_url\": \"https://ivcdn.vnecdn.net/giaitri/images/web/2023/07/21/erik-to-tinh-voi-nua-kia-tai-hop-bao-ra-mv-moi-1689915694.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 14,\n                \"name\": \"Hà Anh Tuấn\",\n                \"avatar_url\": \"https://cdn.tuoitre.vn/471584752817336320/2023/1/9/ha-anh-tuan-2-16611539333631474223154-1661240470068-1661240470174753415511-16732489668492066033970.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 15,\n                \"name\": \"Amee\",\n                \"avatar_url\": \"https://static-images.vnncdn.net/files/publish/2022/5/27/hain7580-102.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 16,\n                \"name\": \"Bray\",\n                \"avatar_url\": \"https://vcdn-giaitri.vnecdn.net/2023/05/11/BRAY-232-jpeg-3783-1683791747.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 17,\n                \"name\": \"Noo Phước Thịnh\",\n                \"avatar_url\": \"https://trixie.com.vn/media/images/article/59037126/noo.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 18,\n                \"name\": \"Đen\",\n                \"avatar_url\": \"https://images2.thanhnien.vn/528068263637045248/2024/1/27/den-vau-99-17063223334631232917099.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 19,\n                \"name\": \"Rhymastic\",\n                \"avatar_url\": \"https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2021/10/2/959628/Vong_Co_3.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 20,\n                \"name\": \"Quân AP\",\n                \"avatar_url\": \"https://thanhnien.mediacdn.vn/uploaded/tienptc/2021_03_16/quan-ap-p7_OXII.jpg?width=500\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 21,\n                \"name\": \"Mr Siro\",\n                \"avatar_url\": \"https://avatar-ex-swe.nixcdn.com/singer/avatar/2017/09/11/2/9/c/6/1505103180911_600.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 22,\n                \"name\": \"Thành Đạt\",\n                \"avatar_url\": \"https://image.voh.com.vn/voh/Image/2023/06/16/do-thanh-dat-profile-la-ai350650082-931084621282845-2270349687302017706-n-008.jpg?t=o\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 23,\n                \"name\": \"Bùi Vĩnh Phúc\",\n                \"avatar_url\": \"https://avatar-ex-swe.nixcdn.com/singer/avatar/2020/04/01/0/1/7/e/1585732503677_600.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 24,\n                \"name\": \"Soobin Hoàng Sơn\",\n                \"avatar_url\": \"https://vnn-imgs-f.vgcloud.vn/2019/02/22/09/img-3722.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 25,\n                \"name\": \"Hoàng Dũng\",\n                \"avatar_url\": \"https://thanhnien.mediacdn.vn/Uploaded/hienth/2022_08_03/jm-08157-617.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 26,\n                \"name\": \"Hoài Lâm\",\n                \"avatar_url\": \"https://kenh14cdn.com/203336854389633024/2022/10/4/photo-4-16649006251621303464422.jpeg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 27,\n                \"name\": \"Anh Tú\",\n                \"avatar_url\": \"https://images2.thanhnien.vn/528068263637045248/2023/12/22/anh-tu4-17032163255361284077285.jpeg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 28,\n                \"name\": \"Binz\",\n                \"avatar_url\": \"https://thanhnien.mediacdn.vn/Uploaded/nhatht/img_5434_IUMN.jpg?width=500\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 29,\n                \"name\": \"Tùng Tea\",\n                \"avatar_url\": \"https://thanhnien.mediacdn.vn/Uploaded/nhatht/img_5434_IUMN.jpg?width=500\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 30,\n                \"name\": \"Justatee\",\n                \"avatar_url\": \"https://avatar-ex-swe.nixcdn.com/singer/avatar/2019/07/22/f/e/a/2/1563758181487_600.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 31,\n                \"name\": \"Tiên Tiên\",\n                \"avatar_url\": \"https://lh3.googleusercontent.com/5dFZjEswZ8gp0haWSOAE_FY4rgm7QlGtTW4hzeaqbRCLiK1c_x_VwzmxxTvfheqKmHiRpjb4Sx5qG9M=w120-h120-p-l90-rj\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 32,\n                \"name\": \"Ed Sheeran\",\n                \"avatar_url\": \"https://lh3.googleusercontent.com/jQoBIAS6JjFGpcqQY1M_Mh3AasOvFENCdVRxkgax1a0K6qiq7AgE3MbJ6Jtt-Jndcarvoawmrg66KTny=w120-h120-p-l90-rj\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 33,\n                \"name\": \"Huyền Tâm Mon\",\n                \"avatar_url\": \"https://lh3.googleusercontent.com/R7Ft02Cubp8ghAwB9WxqdKCxRwLue90V-5aPQxSazrTE6H3OlJb1gh5E6OdlNa8hsg52m5mal59LpQ=w120-h120-p-l90-rj\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 34,\n                \"name\": \"Han Sara\",\n                \"avatar_url\": \"https://lh3.googleusercontent.com/a-/ALV-UjU2K0B0ovaFHk_zTkeXj-NoCvYzfhpifwjgw1VoBRQERpI=w120-h120-l90-rj\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            }\n        ],\n        \"count\": 33\n    },\n    \"message\": \"Get artists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Lấy ds bài hát theo nghệ sĩ",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/public/artists/:artist_id/songs?search=tay&page=1&size=50",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"public",
+								"artists",
+								":artist_id",
+								"songs"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "tay"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "50"
+								}
+							],
+							"variable": [
+								{
+									"key": "artist_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lấy ds bài hát theo nghệ sĩ",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/public/artists/:artist_id/songs?search=tay&page=1&size=50",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"public",
+										"artists",
+										":artist_id",
+										"songs"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "tay"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "50"
+										}
+									],
+									"variable": [
+										{
+											"key": "artist_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 May 2024 13:49:28 GMT"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"name\": \"anh nhà ở đâu thế\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/7C5RCiox3tK-FlJUnjlhrKFttQSi0YtXteGMaSsLiGmdkEoq3F0tZ6FpVs7JNaWYV0YFFsCRKw1CTV4=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/0pX2LGd6pUQ.mp3\",\n            \"lyrics\": null,\n            \"duration\": 216,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Chúng Ta Của Tương Lai\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/wox7fceHTKj6eps4V4dO11iER1XzEDPKd2cP6AEhWa8Opy3ha5rUegpZhBlQ-kfWM6RaoPUXmGgNLls=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/rAbJBorb8Qo.mp3\",\n            \"lyrics\": null,\n            \"duration\": 250,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Chúng Ta Của Hiện Tại\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/R96C4cCNuVOuaKpo8AfoM2ienXSOY3rhljcOi2_7Cg1KnjyZ3hr1X_A5Z8G5vOg645yG6P8txcu1r5kI=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/bNp9pn0ni3I.mp3\",\n            \"lyrics\": null,\n            \"duration\": 302,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"MAKING MY WAY\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/4W7UzpwfJwYvB--1T8UQ6FdLBCfPH2zTElbCwnNp_wKYA_WvEJOvSNO9dg27YKbs1Wa8Y05iXhXL4hsL=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/-E2u6exhzPE.mp3\",\n            \"lyrics\": null,\n            \"duration\": 259,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Hãy Trao Cho Anh (feat. Snoop Dogg)\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/XUL3o2EPMtfAppLw5fDHBPqB8CmWLfsWQTalYQmhQAkAdlsWsVIdUgnT6lYfpYE_dBFdOYiWLlo70tgR=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/emMR03tG2CE.mp3\",\n            \"lyrics\": null,\n            \"duration\": 246,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Muộn Rồi Mà Sao Còn\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/P91TazxnU8veJCp9Uq8pb0lWCSd23QDO3_5xmVykXuFG98U_JgYLk4THqfqmSNp5SjHjB7M7KcQ_9bYQdQ=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/dLoIOUe1oes.mp3\",\n            \"lyrics\": null,\n            \"duration\": 276,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 85,\n            \"name\": \"lyhoptinh [Sped Up] (feat. Han Sara)\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/p3MNq_IVTGdUhpjpW_4QI1XYsCsPQYaSQ-zSFInqxtVkwZ3qOHKXokwO0JXssDZarfnr4Jr3S_0eNSgZmQ=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/L3Hms5Wf0co.mp3\",\n            \"lyrics\": null,\n            \"duration\": 176,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 86,\n            \"name\": \"Chúng Ta Không Thuộc Về Nhau\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/WyzaRYap78pVb2_5rJDGiYv9t3bfKVFCl6fXCPpTRvigGgHdZLKuOnhX6MvFDgv82AsCFCITLdyinS8=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/78dCF99PheM.mp3\",\n            \"lyrics\": null,\n            \"duration\": 234,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 87,\n            \"name\": \"Em Của Ngày Hôm Qua\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/ngVF3KN1kOURKqMJEBfDsUknmCkMzlFXEyACOFCIXNLdu8SfTcrbJR1Zgk2PxT6DiYlP2lBlIjxHxI4A=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/EXmf1gmokyo.mp3\",\n            \"lyrics\": null,\n            \"duration\": 226,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 88,\n            \"name\": \"Nơi Này Có Anh\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/guPkUMfq6XoStEBVJwwWMD5dttVFgi0OXpzHZ0hvPD0kWxdVkrMbMCBNRDZlUy_N953vMI_r-6x1X_IEWQ=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/qHpE45b4INk.mp3\",\n            \"lyrics\": null,\n            \"duration\": 261,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 89,\n            \"name\": \"Lạc Trôi\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/3SHPY25c9LtPOVaWevZBKvKZBdhDIVglUDKCDvi033gds2oi5Bel9yzoKtiooxSZLqtDtPPyoZJWEZ4=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/RKvRLLQtDbg.mp3\",\n            \"lyrics\": null,\n            \"duration\": 233,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 90,\n            \"name\": \"Nắng Ấm Xa Dần\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/JjZpaqyngChD0l8DbRDs2h5kkkb4S_AsCEu4XBXJvlOT0mWns9oINc8PlIhAcTWAXvgDt2fGk1xL04q9fQ=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/HrlpCgMgRVo.mp3\",\n            \"lyrics\": null,\n            \"duration\": 192,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 91,\n            \"name\": \"Hãy Trao Cho Anh (Sky Tour 2019)\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/gMcFERB88U2z4cuSswYliZ2A6yaVvEbsKim63LSuyEFhvEvt2uwMJ-ANtzaUbdbUKCiUYxyjOh5_IEFuqA=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/MZXYDBGzlh0.mp3\",\n            \"lyrics\": null,\n            \"duration\": 254,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 92,\n            \"name\": \"Không Phải Dạng Vừa Đâu\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/ngVF3KN1kOURKqMJEBfDsUknmCkMzlFXEyACOFCIXNLdu8SfTcrbJR1Zgk2PxT6DiYlP2lBlIjxHxI4A=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/Dm1EoiPfHU0.mp3\",\n            \"lyrics\": null,\n            \"duration\": 248,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 93,\n            \"name\": \"Âm Thầm Bên Em\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/ngVF3KN1kOURKqMJEBfDsUknmCkMzlFXEyACOFCIXNLdu8SfTcrbJR1Zgk2PxT6DiYlP2lBlIjxHxI4A=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/LG4OC1dvUCQ.mp3\",\n            \"lyrics\": null,\n            \"duration\": 294,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 94,\n            \"name\": \"Có Chắc Yêu Là Đây\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/e9awC-yOmbq1BhHRdCKawHMmANrT7nrzeCz8CurFGUY7PMiwRdfcTQ4WsDGvHm99i78nM8naFNqIZexPng=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/9jX6cDzLM_k.mp3\",\n            \"lyrics\": null,\n            \"duration\": 203,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 95,\n            \"name\": \"Chạy Ngay Đi (Sky Tour 2019)\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/gMcFERB88U2z4cuSswYliZ2A6yaVvEbsKim63LSuyEFhvEvt2uwMJ-ANtzaUbdbUKCiUYxyjOh5_IEFuqA=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/ooChRKk673E.mp3\",\n            \"lyrics\": null,\n            \"duration\": 310,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 96,\n            \"name\": \"Như Ngày Hôm Qua\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/ngVF3KN1kOURKqMJEBfDsUknmCkMzlFXEyACOFCIXNLdu8SfTcrbJR1Zgk2PxT6DiYlP2lBlIjxHxI4A=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/ntE_Cxk1LaY.mp3\",\n            \"lyrics\": null,\n            \"duration\": 223,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 97,\n            \"name\": \"Chạy Ngay Đi\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/aERXTqtD8F4FXprJ4D8ytAbKj0tLUsyaOSUgEDS3-sQoSCs8Z1uP8IMnMJgk_J3GjcO2tuTijjHb8OxY=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/Hg-eKLuK2bU.mp3\",\n            \"lyrics\": null,\n            \"duration\": 273,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 98,\n            \"name\": \"Một Năm Mới Bình An\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/pK94oIKa3kV8MKvW8bA3_q7BH-MihoiCjX2OyIKAYxPggR4grtEAD9H-5qmAD7k8eMqknS8lPKPGsyDVmg=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/e6RPuBcpsko.mp3\",\n            \"lyrics\": null,\n            \"duration\": 248,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 99,\n            \"name\": \"Hạnh Phúc Mới (Lofi) (feat. Sơn Tùng M-TP)\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/JqGUw4vB16h3T4zf-7zYCdVOdoLf1oLdv5Ol6Q7XzC4tsWenY78m1smiiJDNG6rcqj-Hba0_YOQ7mjo=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/q4zXqVdm3uE.mp3\",\n            \"lyrics\": null,\n            \"duration\": 93,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 100,\n            \"name\": \"Cơn Mưa Ngang Qua (Remix 2022)\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/rBxDUA4g8JDb47Z83kzRhTw2ScytLaCOP3jEfftnkKeQcVQanIhV16xmcD-bB1Ahq9ft3dKp9Hoasxg=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/7zh2QCjp818.mp3\",\n            \"lyrics\": null,\n            \"duration\": 234,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 101,\n            \"name\": \"Lạc Trôi\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/v4CNYBSe1XGbJRk_L0gfh7hRsiucrZqMRWOvmMzq2rrrRAycKsZwD6L-qJ4b-N-mg6oeen-9d05opJc=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/baNZBBYNoc4.mp3\",\n            \"lyrics\": null,\n            \"duration\": 273,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 102,\n            \"name\": \"Buong Doi Tay Nhau Ra\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/blW3DNOg0hNm6zVmKj5u2E7Vd_VHmOx19mz46m2_46zrC1q1_-XA_9cdXnIJNZupZ85MPUzkB73_0ArfEA=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/VRQr1edrqOY.mp3\",\n            \"lyrics\": null,\n            \"duration\": 225,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 103,\n            \"name\": \"Cơn Mưa Ngang Qua\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/ngVF3KN1kOURKqMJEBfDsUknmCkMzlFXEyACOFCIXNLdu8SfTcrbJR1Zgk2PxT6DiYlP2lBlIjxHxI4A=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/6KSQRXqMHvo.mp3\",\n            \"lyrics\": null,\n            \"duration\": 235,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 104,\n            \"name\": \"Nơi Này Có Anh (Remix)\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/0chmdyviCBGcRqzwtP4OSVL0DeAKD8FbyKdRDl1jd7iAyydt-joSgXfU3DESjnQ6u2iaYSm7Ascn6e6q=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/xdkfUq3QtRU.mp3\",\n            \"lyrics\": null,\n            \"duration\": 215,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 125,\n            \"name\": \"Em Cua Ngay Hom Qua\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/ngVF3KN1kOURKqMJEBfDsUknmCkMzlFXEyACOFCIXNLdu8SfTcrbJR1Zgk2PxT6DiYlP2lBlIjxHxI4A=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/I_U4mU7Dq_4.mp3\",\n            \"lyrics\": null,\n            \"duration\": 264,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 126,\n            \"name\": \"There's No One At All (Another Version)\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/gGPKCa01jxAgsWTSJF-6ffOAsFpFjrkWMQtDELP2tkrrqTGANls36IzZlzXux1F7rWPvpWVDJceZ_gE=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/MEVMjr_E0QA.mp3\",\n            \"lyrics\": null,\n            \"duration\": 202,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 127,\n            \"name\": \"Tiến Lên Việt Nam Ơi\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/uaohgDw9vOAfvysC76mbKKmJkhGu-PpfbI6CuDKmk_qysNfANReqv9vA4D0YLUiXCvtoWKQ77lIxBprB=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/fMS0P7z-nhs.mp3\",\n            \"lyrics\": null,\n            \"duration\": 219,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 128,\n            \"name\": \"Thái Bình Mồ Hôi Rơi\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/j-GQqBauHdkvuIn3s8rkPoHQBf8_SCqPztsu_8yaW-37o2LHhW3-uPD7ZvUTFkAbFETQ8vYUaqteGKIHHg=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/moMtFrQBQws.mp3\",\n            \"lyrics\": null,\n            \"duration\": 319,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 129,\n            \"name\": \"Em Của Ngày Hôm Qua (80s)\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/eBn5ZpiStjbWFagP2BkitnAMD9q6sdkDlzlX4aahKwdGkDFmzLhAm1zbKF__LLQjZ1aXZroAbyWQ3l4=w120-h120-l90-rj\",\n            \"path\": \"\",\n            \"lyrics\": null,\n            \"duration\": 238,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 130,\n            \"name\": \"Chắc Ai Đó Sẽ Về\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/ngVF3KN1kOURKqMJEBfDsUknmCkMzlFXEyACOFCIXNLdu8SfTcrbJR1Zgk2PxT6DiYlP2lBlIjxHxI4A=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/0uLcTG3LgtU.mp3\",\n            \"lyrics\": null,\n            \"duration\": 263,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 131,\n            \"name\": \"Ấn Nút Nhớ... Thả Giấc Mơ\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/ngVF3KN1kOURKqMJEBfDsUknmCkMzlFXEyACOFCIXNLdu8SfTcrbJR1Zgk2PxT6DiYlP2lBlIjxHxI4A=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/Lw22CxK-qT0.mp3\",\n            \"lyrics\": null,\n            \"duration\": 245,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 132,\n            \"name\": \"Buông Đôi Tay Nhau Ra\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/ngVF3KN1kOURKqMJEBfDsUknmCkMzlFXEyACOFCIXNLdu8SfTcrbJR1Zgk2PxT6DiYlP2lBlIjxHxI4A=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/Ue-D1STe-zA.mp3\",\n            \"lyrics\": null,\n            \"duration\": 228,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 133,\n            \"name\": \"Khuôn Mặt Đáng Thương\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/daxwckTRGIAe5uDdXMXmkBnAWsY_9bvQsT9Xga-0THMCeXxDkowgxl2_aXkvxTSRndkfqHtDld6ORAhpvw=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/2Zvx2cn37HQ.mp3\",\n            \"lyrics\": null,\n            \"duration\": 258,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 134,\n            \"name\": \"Chạy Ngay Đi (Onionn Remix)\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/oCBEX4IfXj7jqX6kAeIJj00TOXFJlM3RYJcs4jPPxcrEmi0t_pL-2Qh4S75_E-W2mQ5_06s4CZVuo784=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/H81QGLFtgPw.mp3\",\n            \"lyrics\": null,\n            \"duration\": 231,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 135,\n            \"name\": \"Anh Sai Rồi\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/ngVF3KN1kOURKqMJEBfDsUknmCkMzlFXEyACOFCIXNLdu8SfTcrbJR1Zgk2PxT6DiYlP2lBlIjxHxI4A=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/4AYv-4BmXYQ.mp3\",\n            \"lyrics\": null,\n            \"duration\": 253,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 136,\n            \"name\": \"Muộn Rồi Mà Sao Còn (Remix)\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/w6zqB8n_UwcgAts0u6pwd-fPqXRBCEB6xo5n5UoSOM3gbnTRo1qWqLiWL749D432qPkFGv1skosatWJKAA=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/XfEz3-TWits.mp3\",\n            \"lyrics\": null,\n            \"duration\": 447,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 137,\n            \"name\": \"Nhu Ngay Hom Qua\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/blW3DNOg0hNm6zVmKj5u2E7Vd_VHmOx19mz46m2_46zrC1q1_-XA_9cdXnIJNZupZ85MPUzkB73_0ArfEA=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/C4DRHv0yxA0.mp3\",\n            \"lyrics\": null,\n            \"duration\": 221,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 138,\n            \"name\": \"Remember Me (Onionn Remix Countdown 2021)\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/Vg3SVtgpTdsyu8Pc2XDBlvPln1ikskFZ9mQHNWz3x5hdC9LKGvvwQz-ybEQbHL6Nfbano_d6uI893nc=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/kHZ_Vkebkyw.mp3\",\n            \"lyrics\": null,\n            \"duration\": 198,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 139,\n            \"name\": \"Em Của Ngày Hôm Qua (Sky Tour 2019)\",\n            \"thumbnail\": \"https://lh3.googleusercontent.com/gMcFERB88U2z4cuSswYliZ2A6yaVvEbsKim63LSuyEFhvEvt2uwMJ-ANtzaUbdbUKCiUYxyjOh5_IEFuqA=w120-h120-l90-rj\",\n            \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/Gml7neJG7MI.mp3\",\n            \"lyrics\": null,\n            \"duration\": 247,\n            \"release_date\": null,\n            \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        }\n    ],\n    \"message\": \"Danh sách bài hát theo nghệ sĩ\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Lấy ds album'",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/public/album?page=1&size=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"public",
+								"album"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lấy ds nhạc",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/song",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"song"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Apr 2024 15:05:31 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1167"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Nơi này có anh\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T15:57:03.312548Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Nắng ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Nơi này có anh\",\n            \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n            \"path\": \"a.com\",\n            \"lyrics\": \"nơi này có anh\",\n            \"duration\": 310,\n            \"release_date\": \"2023-08-01\",\n            \"created_at\": \"2024-04-01T15:05:00.409466Z\",\n            \"updated_at\": null\n        }\n    ],\n    \"messgae\": \"Get songs successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Lấy ds bài hát trong album",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/public/album/:album_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"public",
+								"album",
+								":album_id"
+							],
+							"variable": [
+								{
+									"key": "album_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lấy ds nhạc",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/song",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"song"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Apr 2024 15:05:31 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1167"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Nơi này có anh\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T15:57:03.312548Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Nắng ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"ấm xa dần\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T16:02:59.295213Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Nơi này có anh\",\n            \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n            \"path\": \"a.com\",\n            \"lyrics\": \"nơi này có anh\",\n            \"duration\": 310,\n            \"release_date\": \"2023-08-01\",\n            \"created_at\": \"2024-04-01T15:05:00.409466Z\",\n            \"updated_at\": null\n        }\n    ],\n    \"messgae\": \"Get songs successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Lấy ds album của nghệ sĩ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/public/artists/album/:artist_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"public",
+								"artists",
+								"album",
+								":artist_id"
+							],
+							"variable": [
+								{
+									"key": "artist_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lấy ds album của nghệ  sĩ",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/admin/artists/album/:artist_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"artists",
+										"album",
+										":artist_id"
+									],
+									"variable": [
+										{
+											"key": "artist_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 02 Apr 2024 14:24:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "276"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 2,\n                \"artist_id\": 1,\n                \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n                \"name\": \"Sơn Tùng Collection\",\n                \"release_date\": \"2023-08-01T00:00:00Z\",\n                \"created_at\": \"2024-04-02T14:23:15.300353Z\"\n            }\n        ],\n        \"count\": 1\n    },\n    \"messgae\": \"Danh sách album theo nghệ sĩ\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Ds nghệ sĩ",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlkNDJmMDE4LTY3ODUtNDM0Zi04ODg1LWUwYWU5YTgxZTJkZCIsInVzZXJfaWQiOjEsImVtYWlsIjoidGluaHlldWN1YXR1aTIwMDJAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpc3N1ZWRfYXQiOiIyMDI0LTA0LTI2VDAwOjU0OjE5LjQxOTgyMzQ3OFoiLCJleHBpcmVkX2F0IjoiMjAyNC0wNC0yNlQwMTowOToxOS40MTk4MjM2NDhaIn0.PvYPp_KxI6u4_47nAqCqStQxigjS14V7gTdUlHwj20I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Taylor Swift\",\r\n    \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9fO22hyFur32YV76cd94kbvoCZNEJPrHrHw&usqp=CAU\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/public/artists?search=",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"public",
+								"artists"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ds nghệ sĩ",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Taylor Swift\",\r\n    \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9fO22hyFur32YV76cd94kbvoCZNEJPrHrHw&usqp=CAU\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/artists?search=",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"artists"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 02 Apr 2024 14:43:44 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "484"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 8,\n                \"name\": \"Taylor Swift Update\",\n                \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9fO22hyFur32YV76cd94kbvoCZNEJPrHrHw&usqp=CAU\",\n                \"created_at\": \"2024-02-24T07:41:30.264441Z\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Sơn Tùng MTP\",\n                \"avatar_url\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzU1rTgHAVkOADoto3IlyZcwlgeG9NjDY5Pmi3DOuda7qVVgumRqc_O1C6FlAYim8Y1Yg&usqp=CAU\",\n                \"created_at\": \"2024-03-27T14:25:08.160651Z\"\n            }\n        ],\n        \"count\": 2\n    },\n    \"messgae\": \"Get artists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Lấy ds danh mục",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/public/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"public",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lấy ds danh mục",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/public/categories",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"public",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Apr 2024 14:24:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "324"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Buồn\",\n            \"created_at\": \"2024-03-02T15:47:07.235128Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Lãng mạn\",\n            \"created_at\": \"2024-03-02T15:47:07.235128Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Chill\",\n            \"created_at\": \"2024-03-02T15:47:07.235128Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Dễ ngủ\",\n            \"created_at\": \"2024-03-02T15:47:07.235128Z\"\n        }\n    ],\n    \"messgae\": \"Danh sách danh mục\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Tìm kiếm bài hát",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/public/songs?search=nơi",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"public",
+								"songs"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "nơi"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tìm kiếm bài hát",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/public/songs?search=nơi",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"public",
+										"songs"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "nơi"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Apr 2024 14:18:54 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "534"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Nơi này có anh\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T15:57:03.312548Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Nơi này có anh\",\n            \"thumbnail\": \"https://i.ytimg.com/vi/xj2SplvLuf4/maxresdefault.jpg\",\n            \"path\": \"a.com\",\n            \"lyrics\": \"nơi này có anh\",\n            \"duration\": 310,\n            \"release_date\": \"2023-08-01\",\n            \"created_at\": \"2024-04-01T15:05:00.409466Z\",\n            \"updated_at\": null,\n            \"artist_name\": null\n        }\n    ],\n    \"messgae\": \"Tìm kiếm bài hát thành công\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Tìm kiếm trên app",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/public/search?search=c",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"public",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "c"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tìm kiếm trên áp",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/public/search?search=c",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"public",
+										"search"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 29 Apr 2024 10:33:13 GMT"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"songs\": [\n            {\n                \"id\": 6,\n                \"name\": \"Chúng Ta Của Tương Lai\",\n                \"thumbnail\": \"https://lh3.googleusercontent.com/wox7fceHTKj6eps4V4dO11iER1XzEDPKd2cP6AEhWa8Opy3ha5rUegpZhBlQ-kfWM6RaoPUXmGgNLls=w120-h120-l90-rj\",\n                \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/rAbJBorb8Qo.mp3\",\n                \"lyrics\": null,\n                \"duration\": 250,\n                \"release_date\": null,\n                \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n                \"updated_at\": null,\n                \"artist_name\": \"Sơn Tùng MTP\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Chúng Ta Của Hiện Tại\",\n                \"thumbnail\": \"https://lh3.googleusercontent.com/R96C4cCNuVOuaKpo8AfoM2ienXSOY3rhljcOi2_7Cg1KnjyZ3hr1X_A5Z8G5vOg645yG6P8txcu1r5kI=w120-h120-l90-rj\",\n                \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/bNp9pn0ni3I.mp3\",\n                \"lyrics\": null,\n                \"duration\": 302,\n                \"release_date\": null,\n                \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n                \"updated_at\": null,\n                \"artist_name\": \"Sơn Tùng MTP\"\n            },\n            {\n                \"id\": 16,\n                \"name\": \"Castle on the Hill\",\n                \"thumbnail\": \"https://lh3.googleusercontent.com/xpDEOr2TeqEn1QpXosXhqtj149FzNnTgAG3oqPnpTxTbQk-oceO90Sz4Axq0s4Jp_QLGQha_um6_EG3WGQ=w120-h120-l90-rj\",\n                \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/wqlTrBCNRiY.mp3\",\n                \"lyrics\": null,\n                \"duration\": 262,\n                \"release_date\": null,\n                \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n                \"updated_at\": null,\n                \"artist_name\": \"Ed Sheeran\"\n            },\n            {\n                \"id\": 46,\n                \"name\": \"Co Bao Nhieu Choi Bay Nhieu\",\n                \"thumbnail\": \"https://lh3.googleusercontent.com/Mjg2HISdKUO0wxJ91Bt-LjUy1IsWO1dqxi43JawCA5IyVvUU7jZbZNJ7bVP79QvSOlHoODWp9Qpygmxa=w120-h120-l90-rj\",\n                \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/WJ0Xxruy4D8.mp3\",\n                \"lyrics\": null,\n                \"duration\": 269,\n                \"release_date\": null,\n                \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n                \"updated_at\": null,\n                \"artist_name\": \"Han Sara\"\n            },\n            {\n                \"id\": 47,\n                \"name\": \"Công Chúa Xuân (feat. Seachains)\",\n                \"thumbnail\": \"https://lh3.googleusercontent.com/WOzO1TbUQ63qutStevcaDZrHpoUuZtNff4TWwrJRh17vf9K-FQsSSjVNP3S0a6aPX8kog58t71BnsGmF=w120-h120-l90-rj\",\n                \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/eG4VQasTK2k.mp3\",\n                \"lyrics\": null,\n                \"duration\": 200,\n                \"release_date\": null,\n                \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n                \"updated_at\": null,\n                \"artist_name\": \"Han Sara\"\n            },\n            {\n                \"id\": 61,\n                \"name\": \"Channa Ve\",\n                \"thumbnail\": \"https://lh3.googleusercontent.com/5bVRrRHi0EZ_MBeMh3Omxev5rvSttGNlzP8wuZGhdAdaIQLs4K9lP0LzkY3_bgR00WtgJj3Rssy6HNdr=w120-h120-l90-rj\",\n                \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/epm7tAtEvYA.mp3\",\n                \"lyrics\": null,\n                \"duration\": 212,\n                \"release_date\": null,\n                \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n                \"updated_at\": null,\n                \"artist_name\": null\n            },\n            {\n                \"id\": 68,\n                \"name\": \"Chann Sitare\",\n                \"thumbnail\": \"https://lh3.googleusercontent.com/bKqbz3kthr9PGUf4zLb8QR8YJS9vOQvuAMuh68auETiSkviGgpirO3vl9qwqX2NsFzsI9yD8KFR4vqJssA=w120-h120-l90-rj\",\n                \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/xjoat5I-1FI.mp3\",\n                \"lyrics\": null,\n                \"duration\": 188,\n                \"release_date\": null,\n                \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n                \"updated_at\": null,\n                \"artist_name\": null\n            },\n            {\n                \"id\": 71,\n                \"name\": \"Có Bao Nhiêu Chơi Bấy Nhiêu\",\n                \"thumbnail\": \"https://lh3.googleusercontent.com/_DE11w4AobFa1gcAOy-Ja9rxhprv9CYHfCgDuEdkZwGk0RcvFy-ov3wD-JgnnBZyludui4SoSXFPbFNK=w120-h120-l90-rj\",\n                \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/6QcBBaMhliY.mp3\",\n                \"lyrics\": null,\n                \"duration\": 257,\n                \"release_date\": null,\n                \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n                \"updated_at\": null,\n                \"artist_name\": \"Han Sara\"\n            },\n            {\n                \"id\": 80,\n                \"name\": \"Có Bao Nhiêu Chơi Bấy Nhiêu\",\n                \"thumbnail\": \"https://lh3.googleusercontent.com/S_cGdbdz9m0vukxJbMkeUqZA0lZK5dc-6U_oghNHwnKSCeD49_w4rcZfTGXDGu1c8N_Qa-l8eIFQIGa5=w120-h120-l90-rj\",\n                \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/cvqEyH2CPqs.mp3\",\n                \"lyrics\": null,\n                \"duration\": 257,\n                \"release_date\": null,\n                \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n                \"updated_at\": null,\n                \"artist_name\": \"Han Sara\"\n            },\n            {\n                \"id\": 86,\n                \"name\": \"Chúng Ta Không Thuộc Về Nhau\",\n                \"thumbnail\": \"https://lh3.googleusercontent.com/WyzaRYap78pVb2_5rJDGiYv9t3bfKVFCl6fXCPpTRvigGgHdZLKuOnhX6MvFDgv82AsCFCITLdyinS8=w120-h120-l90-rj\",\n                \"path\": \"https://storage.googleapis.com/harmony-music-x.appspot.com/songs/78dCF99PheM.mp3\",\n                \"lyrics\": null,\n                \"duration\": 234,\n                \"release_date\": null,\n                \"created_at\": \"2024-04-29T08:17:52.561021Z\",\n                \"updated_at\": null,\n                \"artist_name\": \"Sơn Tùng MTP\"\n            }\n        ],\n        \"artists\": [\n            {\n                \"id\": 3,\n                \"name\": \"Châu Khải Phong\",\n                \"avatar_url\": \"https://static-images.vnncdn.net/files/publish/2023/5/27/batch-dd346143096-707163824751824-6416013366828335422-n-300.jpg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"Chi Dân\",\n                \"avatar_url\": \"https://images2.thanhnien.vn/528068263637045248/2023/4/4/chi-dan-16805906568881778204975.jpeg\",\n                \"created_at\": \"2024-04-29T08:13:56.794617Z\"\n            }\n        ],\n        \"albums\": []\n    },\n    \"messgae\": \"Tìm kiếm bài hát thành công\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Tìm kiếm bài hát theo danh mục",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/public/songs_by_categories/:categories_id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"public",
+								"songs_by_categories",
+								":categories_id"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "nơi",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "categories_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tìm kiếm bài hát theo danh mục",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/public/songs_by_categories/:categories_id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"public",
+										"songs_by_categories",
+										":categories_id"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "nơi",
+											"disabled": true
+										}
+									],
+									"variable": [
+										{
+											"key": "categories_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Apr 2024 14:24:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "264"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Nơi này có anh\",\n            \"thumbnail\": null,\n            \"path\": null,\n            \"lyrics\": null,\n            \"duration\": null,\n            \"release_date\": null,\n            \"created_at\": \"2024-03-02T15:57:03.312548Z\",\n            \"updated_at\": null,\n            \"artist_name\": \"Sơn Tùng MTP\"\n        }\n    ],\n    \"messgae\": \"Tìm kiếm bài hát thành công\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "health check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/health-check",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"health-check"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost/api/v1",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "localhost:8080/api/v1",
+			"type": "string"
+		}
+	]
+}
